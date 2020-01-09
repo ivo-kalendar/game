@@ -1,0 +1,12 @@
+body {
+	background: linear-gradient(to right, cyan, #0f481f);
+	margin: 0;
+}
+
+#canvas {
+	background: linear-gradient(to right, cyan, #0f481f);
+}
+
+#image {
+	display: none;
+}
