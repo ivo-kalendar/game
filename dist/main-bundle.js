@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "070c9df205206f7b4cc7";
+/******/ 	var hotCurrentHash = "8f9806b41260663b7b1b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -826,7 +826,7 @@ eval("module.exports = __webpack_require__(/*! regenerator-runtime */ \"./node_m
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"body {\\r\\n\\tbackground-color: #444;\\r\\n\\tmargin: 0;\\r\\n}\\r\\n\\r\\n.profile {\\r\\n\\tdisplay: flex;\\r\\n\\talign-items: center;\\r\\n\\tjustify-content: center;\\r\\n\\theight: 100vh;\\r\\n\\tflex-flow: column;\\r\\n}\\r\\n\\r\\nimg {\\r\\n\\tborder-radius: 20%;\\r\\n\\twidth: 300px;\\r\\n\\tbox-shadow: 0 0 20px rgba(255, 255, 255, .5);\\r\\n}\\r\\n\\r\\nh1 {\\r\\n\\tcolor: #fff;\\r\\n\\tfont-size: 3em;\\r\\n\\tfont-family: Arial, \\\"Helvetica Neue\\\", Helvetica, sans-serif;\\r\\n\\ttext-shadow: 0 0 20px rgba(255, 255, 255, .4);\\r\\n}\\r\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"body {\\r\\n\\tbackground: linear-gradient(to right, cyan, #0f481f);\\r\\n\\tmargin: 0;\\r\\n}\\r\\n\\r\\n#canvas {\\r\\n\\tbackground: linear-gradient(to right, cyan, #0f481f);\\r\\n\\tdisplay: block;\\r\\n}\\r\\n\\r\\n#image {\\r\\n\\tdisplay: none;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -1041,9 +1041,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
   !*** ./src/index.html ***!
   \************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("module.exports = \"<!DOCTYPE html>\\r\\n<html lang=\\\"en\\\">\\r\\n<head>\\r\\n\\t<meta charset=\\\"UTF-8\\\">\\r\\n\\t<title>Document</title>\\r\\n</head>\\r\\n<body>\\r\\n\\t<div class=\\\"profile\\\">\\r\\n\\t\\t<img src=\\\"\" + __webpack_require__(/*! ./images/archerBoy.png */ \"./src/images/archerBoy.png\") + \"\\\" alt=\\\"\\\">\\r\\n\\t\\t<h1>Ivo Kalendarov</h1>\\r\\n\\t</div>\\r\\n\\t<script src=\\\"/main-bundle.js\\\"></script>\\r\\n</body>\\r\\n</html>\";\n\n//# sourceURL=webpack:///./src/index.html?");
+eval("module.exports = \"<!DOCTYPE html>\\r\\n<html lang=\\\"en\\\">\\r\\n<head>\\r\\n\\t<meta charset=\\\"UTF-8\\\">\\r\\n\\t<title>Archer Boy!</title>\\r\\n</head>\\r\\n<body>\\r\\n\\t<canvas id=\\\"canvas\\\"></canvas>\\r\\n\\t<img src=\\\"/images/archerBoy.png\\\" alt=\\\"\\\" id=\\\"image\\\">\\r\\n\\t<script src=\\\"/main-bundle.js\\\"></script>\\r\\n</body>\\r\\n</html>\";\n\n//# sourceURL=webpack:///./src/index.html?");
 
 /***/ }),
 
@@ -1066,7 +1066,55 @@ eval("var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtim
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! babel-runtime/regenerator */ \"./node_modules/babel-runtime/regenerator/index.js\");\n__webpack_require__(/*! webpack-hot-middleware/client?reload=true */ \"./node_modules/webpack-hot-middleware/client.js?reload=true\");\n__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n__webpack_require__(/*! ./images/archerBoy.png */ \"./src/images/archerBoy.png\");\n__webpack_require__(/*! ./index.html */ \"./src/index.html\");\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("\n\n__webpack_require__(/*! babel-runtime/regenerator */ \"./node_modules/babel-runtime/regenerator/index.js\");\n__webpack_require__(/*! webpack-hot-middleware/client?reload=true */ \"./node_modules/webpack-hot-middleware/client.js?reload=true\");\n__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n__webpack_require__(/*! ./images/archerBoy.png */ \"./src/images/archerBoy.png\");\n__webpack_require__(/*! ./index.html */ \"./src/index.html\");\n__webpack_require__(/*! ./scripts/canvas.js */ \"./src/scripts/canvas.js\");\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/canvas.js":
+/*!*******************************!*\
+  !*** ./src/scripts/canvas.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar player = __webpack_require__(/*! ./player */ \"./src/scripts/player.js\");\nvar ctx = player.ctx;\n\nvar _require = __webpack_require__(/*! ./events */ \"./src/scripts/events.js\"),\n    keydown = _require.keydown,\n    keyup = _require.keyup;\n\nvar _require2 = __webpack_require__(/*! ./drawPlayer */ \"./src/scripts/drawPlayer.js\"),\n    drawPlayer = _require2.drawPlayer;\n\nupdate();\naddEventListener('keydown', keydown);\naddEventListener('keyup', keyup);\n\nfunction update() {\n\tclear();\n\tdrawPlayer();\n\tnewPosition();\n\twalls();\n\trequestAnimationFrame(update);\n}\n\nfunction clear() {\n\tctx.clearRect(0, 0, canvas.width, canvas.height);\n}\n\nfunction newPosition() {\n\tplayer.x += player.dx;\n\tplayer.y += player.dy;\n}\n\nfunction walls() {\n\tif (player.x <= -50) {\n\t\tplayer.x = -50;\n\t}\n\tif (player.x >= canvas.width - 80) {\n\t\tplayer.x = canvas.width - 80;\n\t}\n\tif (player.y <= -50) {\n\t\tplayer.y = -50;\n\t}\n\tif (player.y >= canvas.height - 80) {\n\t\tplayer.y = canvas.height - 80;\n\t}\n}\n\n//# sourceURL=webpack:///./src/scripts/canvas.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/drawPlayer.js":
+/*!***********************************!*\
+  !*** ./src/scripts/drawPlayer.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar player = __webpack_require__(/*! ./player.js */ \"./src/scripts/player.js\");\nvar ctx = player.ctx;\n\nexports.drawPlayer = function () {\n\tctx.save();\n\tif (player.forward === true) {\n\t\tctx.scale(1, 1);\n\t\tctx.drawImage(player.image, player.x, player.y, player.w, player.h);\n\t}\n\tif (player.forward === false) {\n\t\tctx.scale(-1, 1);\n\t\tctx.drawImage(player.image, -player.x, player.y, -player.w, player.h);\n\t}\n\tctx.restore();\n};\n\n//# sourceURL=webpack:///./src/scripts/drawPlayer.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/events.js":
+/*!*******************************!*\
+  !*** ./src/scripts/events.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar player = __webpack_require__(/*! ./player.js */ \"./src/scripts/player.js\");\n\nexports.keydown = function (e) {\n\tif (e.keyCode === 39 || e.keyCode === 102) {\n\t\tplayer.dx = player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 37 || e.keyCode === 100) {\n\t\tplayer.dx = -player.speed;player.forward = false;\n\t}\n\tif (e.keyCode === 38 || e.keyCode === 104) {\n\t\tplayer.dy = -player.speed;\n\t}\n\tif (e.keyCode === 40 || e.keyCode === 98) {\n\t\tplayer.dy = player.speed;\n\t}\n\tif (e.keyCode === 105) {\n\t\tplayer.dx = player.speed;player.dy = -player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 103) {\n\t\tplayer.dx = -player.speed;player.dy = -player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 99) {\n\t\tplayer.dx = player.speed;player.dy = player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 97) {\n\t\tplayer.dx = -player.speed;player.dy = player.speed;player.forward = true;\n\t}\n};\n\nexports.keyup = function (e) {\n\tif (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 102 || e.keyCode === 100) {\n\t\tplayer.dx = 0;\n\t}\n\tif (e.keyCode === 38 || e.keyCode === 40 || e.keyCode === 104 || e.keyCode === 98) {\n\t\tplayer.dy = 0;\n\t}\n\tif (e.keyCode === 105 || e.keyCode === 103 || e.keyCode === 99 || e.keyCode === 97) {\n\t\tplayer.dx = 0;player.dy = 0;\n\t}\n};\n\n//# sourceURL=webpack:///./src/scripts/events.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/player.js":
+/*!*******************************!*\
+  !*** ./src/scripts/player.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar canvas = document.getElementById('canvas');\ncanvas.width = window.innerWidth;\ncanvas.height = window.innerHeight;\n\nmodule.exports = {\n\tctx: canvas.getContext('2d'),\n\timage: document.getElementById('image'),\n\tx: canvas.width / 2 - 50,\n\ty: canvas.height / 2 - 75,\n\tw: 150,\n\th: 125,\n\tspeed: 10,\n\tdx: 0,\n\tdy: 0,\n\tforward: true\n};\n\n//# sourceURL=webpack:///./src/scripts/player.js?");
 
 /***/ }),
 
