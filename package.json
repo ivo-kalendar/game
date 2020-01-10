@@ -1,7 +1,7 @@
 {
-  "name": "webpackStarterSetUp",
+  "name": "Archer_Boy",
   "version": "1.0.0",
-  "description": "Basic Webpack setup",
+  "description": "Archer Boy",
   "main": "index.js",
   "dependencies": {
     "babel-core": "^6.26.3",
