@@ -1,17 +1,13 @@
 
-let player = require('./player.js')
+let player = require('./player')
 let ctx = player.ctx
-let { keydown, keyup, click, mouseup } = require('./events.js')
+let { keydown, keyup } = require('./events')
+let { drawPlayer } = require('./drawPlayer')
 
 
 update()
-
 addEventListener('keydown', keydown)
 addEventListener('keyup', keyup)
-addEventListener('click', click)
-addEventListener('mouseup', mouseup)
-
-
 
 function update() {
 	clear()
@@ -22,13 +18,8 @@ function update() {
 }
 
 
-
 function clear() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
-}
-
-function drawPlayer() {
-	ctx.drawImage(player.image, player.x, player.y, player.w, player.h)	
 }
 
 function newPosition() {
