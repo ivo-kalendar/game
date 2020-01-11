@@ -1,13 +1,15 @@
 
 let player = require('./player')
 let ctx = player.ctx
-let { keydown, keyup } = require('./events')
+let { keydown, keyup, touchstart, touchend } = require('./events')
 let { drawPlayer } = require('./drawPlayer')
 
 
 update()
 addEventListener('keydown', keydown)
 addEventListener('keyup', keyup)
+addEventListener('touchstart', touchstart)
+addEventListener('touchend', touchend)
 
 function update() {
 	clear()

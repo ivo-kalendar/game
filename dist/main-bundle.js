@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8f9806b41260663b7b1b";
+/******/ 	var hotCurrentHash = "78ef6ce30346c4b8e477";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1078,7 +1078,7 @@ eval("\n\n__webpack_require__(/*! babel-runtime/regenerator */ \"./node_modules/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar player = __webpack_require__(/*! ./player */ \"./src/scripts/player.js\");\nvar ctx = player.ctx;\n\nvar _require = __webpack_require__(/*! ./events */ \"./src/scripts/events.js\"),\n    keydown = _require.keydown,\n    keyup = _require.keyup;\n\nvar _require2 = __webpack_require__(/*! ./drawPlayer */ \"./src/scripts/drawPlayer.js\"),\n    drawPlayer = _require2.drawPlayer;\n\nupdate();\naddEventListener('keydown', keydown);\naddEventListener('keyup', keyup);\n\nfunction update() {\n\tclear();\n\tdrawPlayer();\n\tnewPosition();\n\twalls();\n\trequestAnimationFrame(update);\n}\n\nfunction clear() {\n\tctx.clearRect(0, 0, canvas.width, canvas.height);\n}\n\nfunction newPosition() {\n\tplayer.x += player.dx;\n\tplayer.y += player.dy;\n}\n\nfunction walls() {\n\tif (player.x <= -50) {\n\t\tplayer.x = -50;\n\t}\n\tif (player.x >= canvas.width - 80) {\n\t\tplayer.x = canvas.width - 80;\n\t}\n\tif (player.y <= -50) {\n\t\tplayer.y = -50;\n\t}\n\tif (player.y >= canvas.height - 80) {\n\t\tplayer.y = canvas.height - 80;\n\t}\n}\n\n//# sourceURL=webpack:///./src/scripts/canvas.js?");
+eval("\n\nvar player = __webpack_require__(/*! ./player */ \"./src/scripts/player.js\");\nvar ctx = player.ctx;\n\nvar _require = __webpack_require__(/*! ./events */ \"./src/scripts/events.js\"),\n    keydown = _require.keydown,\n    keyup = _require.keyup,\n    touchstart = _require.touchstart,\n    touchend = _require.touchend;\n\nvar _require2 = __webpack_require__(/*! ./drawPlayer */ \"./src/scripts/drawPlayer.js\"),\n    drawPlayer = _require2.drawPlayer;\n\nupdate();\naddEventListener('keydown', keydown);\naddEventListener('keyup', keyup);\naddEventListener('touchstart', touchstart);\naddEventListener('touchend', touchend);\n\nfunction update() {\n\tclear();\n\tdrawPlayer();\n\tnewPosition();\n\twalls();\n\trequestAnimationFrame(update);\n}\n\nfunction clear() {\n\tctx.clearRect(0, 0, canvas.width, canvas.height);\n}\n\nfunction newPosition() {\n\tplayer.x += player.dx;\n\tplayer.y += player.dy;\n}\n\nfunction walls() {\n\tif (player.x <= -50) {\n\t\tplayer.x = -50;\n\t}\n\tif (player.x >= canvas.width - 80) {\n\t\tplayer.x = canvas.width - 80;\n\t}\n\tif (player.y <= -50) {\n\t\tplayer.y = -50;\n\t}\n\tif (player.y >= canvas.height - 80) {\n\t\tplayer.y = canvas.height - 80;\n\t}\n}\n\n//# sourceURL=webpack:///./src/scripts/canvas.js?");
 
 /***/ }),
 
@@ -1102,7 +1102,19 @@ eval("\n\nvar player = __webpack_require__(/*! ./player.js */ \"./src/scripts/pl
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar player = __webpack_require__(/*! ./player.js */ \"./src/scripts/player.js\");\n\nexports.keydown = function (e) {\n\tif (e.keyCode === 39 || e.keyCode === 102) {\n\t\tplayer.dx = player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 37 || e.keyCode === 100) {\n\t\tplayer.dx = -player.speed;player.forward = false;\n\t}\n\tif (e.keyCode === 38 || e.keyCode === 104) {\n\t\tplayer.dy = -player.speed;\n\t}\n\tif (e.keyCode === 40 || e.keyCode === 98) {\n\t\tplayer.dy = player.speed;\n\t}\n\tif (e.keyCode === 105) {\n\t\tplayer.dx = player.speed;player.dy = -player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 103) {\n\t\tplayer.dx = -player.speed;player.dy = -player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 99) {\n\t\tplayer.dx = player.speed;player.dy = player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 97) {\n\t\tplayer.dx = -player.speed;player.dy = player.speed;player.forward = true;\n\t}\n};\n\nexports.keyup = function (e) {\n\tif (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 102 || e.keyCode === 100) {\n\t\tplayer.dx = 0;\n\t}\n\tif (e.keyCode === 38 || e.keyCode === 40 || e.keyCode === 104 || e.keyCode === 98) {\n\t\tplayer.dy = 0;\n\t}\n\tif (e.keyCode === 105 || e.keyCode === 103 || e.keyCode === 99 || e.keyCode === 97) {\n\t\tplayer.dx = 0;player.dy = 0;\n\t}\n};\n\n//# sourceURL=webpack:///./src/scripts/events.js?");
+eval("\n\nvar player = __webpack_require__(/*! ./player.js */ \"./src/scripts/player.js\");\n\nvar _require = __webpack_require__(/*! ./moveingFunctions */ \"./src/scripts/moveingFunctions.js\"),\n    moveRight = _require.moveRight,\n    moveLeft = _require.moveLeft,\n    moveUp = _require.moveUp,\n    moveDown = _require.moveDown;\n\nexports.keydown = function (e) {\n\t// COMMANDS: RIGHT, LEFT, UP, DOWN \n\tif (e.keyCode === 39 || e.keyCode === 102) {\n\t\tmoveRight();\n\t}\n\tif (e.keyCode === 37 || e.keyCode === 100) {\n\t\tmoveLeft();\n\t}\n\tif (e.keyCode === 38 || e.keyCode === 104) {\n\t\tmoveUp();\n\t}\n\tif (e.keyCode === 40 || e.keyCode === 98) {\n\t\tmoveDown();\n\t}\n\t// ALL FOUR ANGLE COMMANDS\n\tif (e.keyCode === 105) {\n\t\tplayer.dx = player.speed;player.dy = -player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 103) {\n\t\tplayer.dx = -player.speed;player.dy = -player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 99) {\n\t\tplayer.dx = player.speed;player.dy = player.speed;player.forward = true;\n\t}\n\tif (e.keyCode === 97) {\n\t\tplayer.dx = -player.speed;player.dy = player.speed;player.forward = true;\n\t}\n};\n\nexports.keyup = function (e) {\n\tif (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 102 || e.keyCode === 100) {\n\t\tplayer.dx = 0;\n\t}\n\tif (e.keyCode === 38 || e.keyCode === 40 || e.keyCode === 104 || e.keyCode === 98) {\n\t\tplayer.dy = 0;\n\t}\n\tif (e.keyCode === 105 || e.keyCode === 103 || e.keyCode === 99 || e.keyCode === 97) {\n\t\tplayer.dx = 0;player.dy = 0;\n\t}\n};\n\nexports.touchstart = function (e) {\n\tvar client = {\n\t\tX: e.touches['0'].clientX,\n\t\tX_right: canvas.width / 3 * 2,\n\t\tX_left: canvas.width / 3,\n\t\tY: e.touches['0'].clientY,\n\t\tY_up: canvas.height / 3,\n\t\tY_down: canvas.height / 3 * 2\n\t};\n\n\tif (client.X > client.X_right) {\n\t\tmoveRight();\n\t}\n\tif (client.X < client.X_left) {\n\t\tmoveLeft();\n\t}\n\tif (client.Y < client.Y_up) {\n\t\tmoveUp();\n\t}\n\tif (client.Y > client.Y_down) {\n\t\tmoveDown();\n\t}\n};\n\nexports.touchend = function (e) {\n\tif (e) {\n\t\tplayer.dx = 0;player.dy = 0;\n\t}\n};\n\n//# sourceURL=webpack:///./src/scripts/events.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/moveingFunctions.js":
+/*!*****************************************!*\
+  !*** ./src/scripts/moveingFunctions.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar player = __webpack_require__(/*! ./player.js */ \"./src/scripts/player.js\");\n\nexports.moveRight = function () {\n  player.dx = player.speed;player.forward = true;\n};\nexports.moveLeft = function () {\n  player.dx = -player.speed;player.forward = false;\n};\nexports.moveUp = function () {\n  player.dy = -player.speed;\n};\nexports.moveDown = function () {\n  player.dy = player.speed;\n};\n\n//# sourceURL=webpack:///./src/scripts/moveingFunctions.js?");
 
 /***/ }),
 
