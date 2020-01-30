@@ -25,5 +25,5 @@ app.use(webpackHotMiddleware)
 app.use(express.static('./dist'))
 
 
-const PORT = process.env.PORT || 3000
-app.listen(PORT, () => console.log(`Server started on port ${PORT}...`))
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`Server started on port ${port}...`))
