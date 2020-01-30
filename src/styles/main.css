@@ -1,13 +1,14 @@
 body {
 	background: linear-gradient(to right, cyan, #0f481f);
+	/*background-color: red;*/
 	margin: 0;
 }
 
 #canvas {
-	background: linear-gradient(to right, cyan, #0f481f);
 	display: block;
 }
 
 #image {
 	display: none;
 }
+
