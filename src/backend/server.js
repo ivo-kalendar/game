@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 const webpack = require('webpack')
-const config = require('../config/webpack.prod.js')
+const config = require('../config/webpack.config.js')
 const compiler = webpack(config)
 
 const webpackDevMiddleware = require('webpack-dev-middleware')
@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 //  comment the next line if you run in production  //
-// app.use(webpackDevMiddleware(compiler, config.devServer))
+app.use(webpackDevMiddleware(compiler, config.devServer))
 
 
 app.use(webpackHotMiddleware)

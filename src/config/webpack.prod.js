@@ -26,7 +26,7 @@ module.exports = {
 			},
 			{
 				test: /\.png$/,
-				use: [{ loader: "file-loader", options: { name: "images/[name].[ext]" } }]
+				use: [{ loader: "file-loader", options: { name: "[name].[ext]" } }]
 			},
 			{
 				test: /\.html$/,
@@ -41,8 +41,7 @@ module.exports = {
 	},
 	plugins: [ 
 		new OptimizeCssAssetsPlugin(),
-		new MiniCSSExtractPlugin({filename: "[name]-bundle.css"}), 
-		new webpack.DefinePlugin({"process.env": {NODE_ENV: JSON.stringify("production")}}),
+		new MiniCSSExtractPlugin({filename: "[name]-bundle.css"}),
 		new webpack.NamedModulesPlugin()
 	]
 }
