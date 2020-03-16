@@ -1,0 +1,14 @@
+body {
+	/*background: linear-gradient(to right, cyan, #0f481f);*/
+	background-color: red;
+	margin: 0;
+}
+
+#canvas {
+	display: block;
+}
+
+#image {
+	display: none;
+}
+
